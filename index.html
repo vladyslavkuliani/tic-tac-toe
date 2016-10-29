@@ -10,12 +10,14 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
     <!-- link to custom stylesheet (always require after Bootstrap) -->
-    <link rel="stylesheet" href="/css/style.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="css/style.css" media="screen" title="no title" charset="utf-8">
     <!-- jQuery from CDN -->
-
+    <script src="https://code.jquery.com/jquery-3.1.1.js"
+  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+  crossorigin="anonymous"></script>
 
     <!-- link to custom javascript file (always require after external JS libraries) -->
-
+    <script src="js/app.js"></script>
     <title>Tic Tac Toe</title>
   </head>
   <body>
@@ -26,8 +28,14 @@
           <hr>
         </div>
       </div>
+      <div class="message">
+      </div>
       <div class="row">
 
+        <div class="row col-md-6 col-md-offset-3">
+          <div class="col-md-6"><h1 class="x">X</h1></div>
+          <div class="col-md-6"><h1 class="o">O</h1></div>
+        </div>
         <!-- a column represents our game board -->
         <!-- the `offset` class helps us center the board -->
         <div class="col-md-6 col-md-offset-3" id="board">
@@ -35,13 +43,22 @@
           <!-- you can put rows inside of columns! -->
           <!-- Bootstrap subdivides these 'nested' rows into 12 columns, too! -->
           <div class="row">
-            <div class="col-md-4 box">a</div>
-            <div class="col-md-4 box">a</div>
-            <div class="col-md-4 box">a</div>
+            <div class="col-md-4 box" id="cell0"></div>
+            <div class="col-md-4 box" id="cell1"></div>
+            <div class="col-md-4 box" id="cell2"></div>
           </div>
-
-
-
+          <div class="row">
+            <div class="col-md-4 box" id="cell3"></div>
+            <div class="col-md-4 box" id="cell4"></div>
+            <div class="col-md-4 box" id="cell5"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 box" id="cell6"></div>
+            <div class="col-md-4 box" id="cell7"></div>
+            <div class="col-md-4 box" id="cell8"></div>
+          </div>
+          <br>
+          <input id="reset" type="submit" text="reset" value="Reset">
         </div>
       </div>
     </div>

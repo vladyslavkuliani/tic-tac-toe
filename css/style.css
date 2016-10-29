@@ -1,8 +1,35 @@
 #board {
   margin-top: 10px;
+  text-align: center;
 }
 
 .box {
   border: 1px solid black;
   height: 150px;
+}
+
+body{
+
+}
+
+.x, .o {
+  text-align: center;
+}
+
+.x{
+  border: 2px solid green;
+}
+
+.message{
+  width: 30%;
+  height: 20%;
+  position: absolute;
+  margin-left: 29%;
+  margin-top: 10%;
+  display: none;
+  z-index: 2;
+}
+
+.box>h1{
+  font-size: 100px;
 }
