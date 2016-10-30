@@ -7,20 +7,25 @@ $(document).ready(function() {
   // all code to manipulate the DOM
   // goes inside this function
   var cells = $(".box"); // get all .box elements
-  $(cells).on('click', function(){  //adding event listeners
-    putXorO(this);
-    isGameOver();
-  });
+  $(cells).on('click', function(){play(this);});
 
 //pressing on RESET button
   $("#reset").on('click', function(){
     $(".box").html("");
+    $(".box").bind('click', function(){play(this);});
     x = true;
     drawCount = 0;
     isDraw = true;
     $(".x").css("border", "2px solid green");
+    $(".o").css("border", "none");
   });
 });
+
+//every time you press on the cell this function going to work
+function play(cell){
+  putXorO(cell);
+  isGameOver();
+}
 
 //draw X or O on the board
 function putXorO(cell){

@@ -2,14 +2,31 @@
   margin-top: 10px;
   text-align: center;
 }
-
-.box {
-  border: 1px solid black;
-  height: 150px;
+/*left column*/
+#cell0, #cell3{
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+}
+#cell6{
+  border-right: 2px solid black;
 }
 
-body{
+/*middle column*/
+#cell1, #cell4{
+  border-bottom: 2px solid black;
+}
 
+/*bright column*/
+#cell2, #cell5{
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
+}
+#cell8{
+  border-left: 2px solid black;
+}
+
+.box {
+  height: 150px;
 }
 
 .x, .o {
