@@ -2,7 +2,7 @@
 var x = true;//put X or O
 var drawCount = 0;//if all 9 cells were pressed
 var isDraw = true;
-var lastWinnerCombination; //to reset BG color when press RESET
+var lastWinnerCombination = null; //to reset BG color when press RESET
 
 // wait for the DOM to finish loading
 $(document).ready(function() {
@@ -21,9 +21,9 @@ $(document).ready(function() {
     $(".box").html(""); //reset all cells//bind back click event
     $(".box").one('click', function(){play(this);});
     $(lastWinnerCombination).css('background', '#e8edf3');//reset BG color of winning combination
+    lastWinnerCombination = null;
     $(".x").css("border", "2px solid green"); //set green border around X...X is next turn
     $(".o").css("border", "none");
-
     $(".message").css('height', '0');
   });
 });
@@ -36,7 +36,6 @@ function play(cell){
 
 //draw X or O on the board
 function putXorO(cell){
-  if($(cell).text()===""){
     if(x){
         $(cell).html("<h1 style='color:#F79F79'>X</h1>");
         $(".x").css("border", "none");
@@ -49,7 +48,6 @@ function putXorO(cell){
       $(".o").css("border", "none");
       x = !x;
     }
-  }
 }
 
 function isGameOver(){
