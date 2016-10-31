@@ -15,22 +15,29 @@
     <script src="https://code.jquery.com/jquery-3.1.1.js"
   integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
   crossorigin="anonymous"></script>
-
     <!-- link to custom javascript file (always require after external JS libraries) -->
     <script src="js/app.js"></script>
+    <script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+  integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+  crossorigin="anonymous"></script>
     <title>Tic Tac Toe</title>
   </head>
   <body>
     <div class="container">
-      <div class="row text-center">
+      <div class="row text-center" id="header">
         <div class="col-md-12 col-xs-12">
           <h1>Tic Tac Toe</h1>
           <hr>
         </div>
       </div>
       <div class="message">
+        <div class="message-content">
+          <h1></h1>
+          <input id="play-again" type="submit" text="reset" value="Play again">
+        </div>
       </div>
-      <div class="row">
+      <div class="row" id="main">
 
         <div class="row col-md-6 col-xs-12 col-md-offset-3">
           <div class="col-md-6"><h1 class="x">X</h1></div>
@@ -38,27 +45,27 @@
         </div>
         <!-- a column represents our game board -->
         <!-- the `offset` class helps us center the board -->
-        <div class="col-md-6 col-xs-12 col-md-offset-3" id="board">
+        <div class="col-md-6 col-xs-12 col-md-offset-3 visuallyhidden" id="board">
 
           <!-- you can put rows inside of columns! -->
           <!-- Bootstrap subdivides these 'nested' rows into 12 columns, too! -->
-          <div class="row">
-            <div class="col-md-4 col-xs-4 box" id="cell0"></div>
-            <div class="col-md-4 col-xs-4  box" id="cell1"></div>
-            <div class="col-md-4 col-xs-4  box" id="cell2"></div>
+
+          <!-- classes: row1, col1, diag1 etc. added to choose one of the winning combinations  -->
+          <div class="row row1">
+            <div class="col-md-4 col-xs-4  box col1 diag1" id="cell0"></div>
+            <div class="col-md-4 col-xs-4  box col2" id="cell1"></div>
+            <div class="col-md-4 col-xs-4  box col3 diag2" id="cell2"></div>
           </div>
-          <div class="row">
-            <div class="col-md-4 col-xs-4  box" id="cell3"></div>
-            <div class="col-md-4 col-xs-4  box" id="cell4"></div>
-            <div class="col-md-4 col-xs-4  box" id="cell5"></div>
+          <div class="row row2">
+            <div class="col-md-4 col-xs-4  box col1" id="cell3"></div>
+            <div class="col-md-4 col-xs-4  box col2 diag1 diag2" id="cell4"></div>
+            <div class="col-md-4 col-xs-4  box col3" id="cell5"></div>
           </div>
-          <div class="row">
-            <div class="col-md-4 col-xs-4  box" id="cell6"></div>
-            <div class="col-md-4 col-xs-4  box" id="cell7"></div>
-            <div class="col-md-4 col-xs-4  box" id="cell8"></div>
+          <div class="row row3">
+            <div class="col-md-4 col-xs-4  box col1 diag2" id="cell6"></div>
+            <div class="col-md-4 col-xs-4  box col2" id="cell7"></div>
+            <div class="col-md-4 col-xs-4  box col3 diag1" id="cell8"></div>
           </div>
-          <br>
-          <input id="reset" type="submit" text="reset" value="Reset">
         </div>
       </div>
     </div>
