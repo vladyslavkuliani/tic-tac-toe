@@ -1,4 +1,3 @@
-
 var x = true;//put X or O
 var drawCount = 0;//if all 9 cells were pressed
 var isDraw = true;
